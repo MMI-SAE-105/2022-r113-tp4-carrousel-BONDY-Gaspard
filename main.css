@@ -19,13 +19,12 @@ max-width width width
         width: 100%;
     }
     .carrousel_ecran {
-        display: flex;
-      /* largeur du parent pour chaque enfant */
-      /* permet de garder toute la largeur du parent */
+        width: 100%;
+        scroll-snap-align: start;
+        flex: none;
     }
-    .carrousel_ecran figure {
-        display: flex;
-      /* enlève les marges par défaut */
+    .carrousel_ecran_figure {
+        margin: 0;
     }
 
     .carrousel {
