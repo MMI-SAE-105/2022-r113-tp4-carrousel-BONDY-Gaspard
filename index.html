@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Carrousel</title>
+    <title>carrousel</title>
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="carrousel" x-data="{}">
-        <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"></button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
-        <button @click="#"></button>
-        <div class="carrousel_parent-ecrans">
+        <button @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button @click="$refs.parent.scrollLeft += $refs.parent.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
+        <div class="carrousel_parent-ecrans" x-ref="parent">
             <div id="ecran-1" class="carrousel_ecran">
                 <figure>
                     <img src="https://picsum.photos/seed/1/500/300" alt="image ecran 1">
@@ -52,6 +51,5 @@
             <li><a href="#ecran-5" class="caroussel_lien">ecran 5</a></li>
         </ul>
     </div>
-    <div class="carrousel_parent-ecrans" x-ref="parent"></div>
 </body>
 </html>
